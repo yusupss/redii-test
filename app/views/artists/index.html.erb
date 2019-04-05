@@ -1,0 +1,56 @@
+
+<div class="container">
+  <div class="popular">
+    <div class="col-md-12">
+      <div class="row ">
+        <div class="col-md-6 align-self-center"> <h2 class="title">THE MOST POPULAR ARTIST  <%= @keyword.present? ? "IN #{@keyword.upcase}" : ''%></h2> </div>
+      </div>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-danger" role="alert">
+          <%= content_tag :div, value, class: "flash #{key}" %>
+        </div>
+      <% end %>
+      <%= form_tag(root_path, method: :get) do %>
+
+        <div class="col-md-8">
+
+          <div class="row">
+            <div class="col-md-7">
+              <%=text_field_tag 'keyword', @keyword, placeholder:'Enter Country Name', class: "form-control mb-2 mb-sm-0"%>
+            </div>
+            <div class="col-md-1"><%= submit_tag 'Search',class: "btn btn-primary" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    &nbsp;
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Band Name</th>
+          <th>Picture</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @top_artist.each do |artist|%>
+          <tr>
+            <td>
+              <%= link_to artist_path(id: artist["name"]), target: :_blank do %>
+                <%=artist["name"]%>
+              <%end%>
+            </td>
+            <td>
+              <%= link_to artist_path(id: artist["name"]), target: :_blank do %>
+                <%=image_tag artist["image"][1]["#text"]%>
+              <%end%>
+
+            </td>
+          </tr>
+        <%end%>
+      </tbody>
+
+    </table>
+
+    <%= will_paginate @values, params: { keyword: @keyword }, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

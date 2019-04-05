@@ -8,7 +8,13 @@ When(/^I am on the homepage$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |string|
-  page.has_content?(string) # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_text string # Write code here that turns the phrase above into concrete actions
+
+end
+
+Then(/^I should see keyword/) do
+  expect(page).to have_css "input[name=keyword]", count=1  # Write code here that turns the phrase above into concrete actions
+
 end
 
 When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|

@@ -16,7 +16,9 @@
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello World from Webpacker')
+import ReactRailsUJS from 'react_ujs'
+
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
-var ReactRailsUJS = require("react_ujs");
+// var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);

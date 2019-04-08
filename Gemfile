@@ -36,14 +36,25 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# bootsrap
 gem 'bootstrap-sass'
+gem "bootstrap-table-rails"
 
+# api handler
 gem 'rest-client'
 
 gem 'kaminari'
 
+# pagination
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+
+# react implementation
+gem 'webpacker'
+gem 'react-rails'
+
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

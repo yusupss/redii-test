@@ -66,13 +66,6 @@ namespace :deploy do
     end
   end
 
-  desc 'Generate react'
-  task :generate_react do
-    on roles(:app) do
-      run rails generate react:install
-    end
-  end
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -81,7 +74,6 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  after  :finishing,    :generate_react
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart

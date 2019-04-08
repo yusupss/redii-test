@@ -15,6 +15,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require bootstrap-table/bootstrap-table
-//= require react
-//= require react_ujs
-//= require_tree .
+//= require_webpack/components/Table
+

@@ -24,7 +24,7 @@ class ArtistsController < ApplicationController
     results = JSON.parse(RestClient.get("http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=#{@name}&api_key=635f92c583abcf3404dd1377219306e9&format=json"))
     @top_tracks = results["toptracks"]["track"]
 
-    render component: 'Table', props: { top_tracks: @top_tracks }, tag: 'span', class: 'todo'
+    # render component: 'Table', props: { top_tracks: @top_tracks }, tag: 'span', class: 'todo'
 
   end
 end

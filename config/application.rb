@@ -24,6 +24,6 @@ module Lastfm
     }
     # Changing files matching these dirs/exts will cause the server renderer to reload:
     config.react.server_renderer_extensions = ["jsx", "js"]
-    config.react.server_renderer_directories = ["/app/assets/javascripts/webpack", "/app/javascript/"]
+    config.react.server_renderer_directories = ["/app/assets/javascripts", "/app/javascript/"]
   end
 end

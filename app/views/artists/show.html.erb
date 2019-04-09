@@ -2,6 +2,6 @@
   <div class="popular">
     <h2 class="title">TOP TRACKS OF <%=@name%></h2>
 
-    <%= react_component("Table", { top_tracks: @top_tracks }) %>
+    <%= react_component("Table", { top_tracks: @top_tracks }, {prerender: true}) %>
   </div>
 </div>

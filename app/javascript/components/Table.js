@@ -5,20 +5,26 @@ import PropTypes from "prop-types"
 class Table extends React.Component {
   render() {
     return (
-      <ul>
-        {this.props.top_tracks.map(function(track) {
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th> Title </th>
+            <th> URL </th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.top_tracks.map(function(track) {
           return (
-            <li>
-              Name: {track.name}. URL: {track.url}
-            </li>
+            <tr>
+              <td> {track.name} </td>
+              <td> <a href={track.url} > {track.url} </a></td>
+            </tr>
           );
         })}
-      </ul>
+        </tbody>
+      </table>
     );
   }
 }
 
-Table.propTypes = {
-  name: PropTypes.string
-};
 export default Table
